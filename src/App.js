@@ -18,8 +18,8 @@ function App() {
             taskTime: "6 am - 7 am",
         },
         {
-            taskName: " exercise",
-            taskTime: " 7 am - 8 am",
+            taskName: "exercise",
+            taskTime: "7 am - 8 am",
         },
     ];
     return (
@@ -53,7 +53,7 @@ function App() {
             </div>
             <List array={newArr} />
             <Card2 object={obj} />
-            <List2 />
+            <List2 tasks={arr} />
             <Footer />
         </div>
     );
