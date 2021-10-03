@@ -2,10 +2,15 @@ import Header from "./component/Header";
 import Button from "./component/Button";
 import Card from "./component/Card";
 import List from "./component/List";
+import Card2 from "./component/Card2";
 import Footer from "./component/Footer";
 
 function App() {
     const newArr = ["hi", "hello", "goodbye"];
+    const obj = {
+        title: "1st card",
+        text: "Card's content is accomplished",
+    };
     return (
         <div className="App">
             <Header />
@@ -36,6 +41,8 @@ function App() {
                 </div>
             </div>
             <List array={newArr} />
+            <Card2 object={obj} />
+
             <Footer />
         </div>
     );
