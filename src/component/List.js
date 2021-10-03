@@ -1,6 +1,5 @@
 const List = (props) => {
     const { array } = props;
-    console.log(props);
 
     return (
         <ul class="list-group">

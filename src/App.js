@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Header from "./component/Header";
 import Button from "./component/Button";
 import Card from "./component/Card";
@@ -7,6 +8,7 @@ import List2 from "./component/List2";
 import Footer from "./component/Footer";
 
 function App() {
+    const [array, setArray] = useState(111);
     const newArr = ["hi", "hello", "goodbye"];
     const obj = {
         title: "1st card",
@@ -22,6 +24,7 @@ function App() {
             taskTime: "7 am - 8 am",
         },
     ];
+    console.log(array);
     return (
         <div className="App">
             <Header />
@@ -55,6 +58,7 @@ function App() {
             <Card2 object={obj} />
             <List2 tasks={arr} />
             <Footer />
+            <button onClick={() => setArray(array + 222)}>submit</button>
         </div>
     );
 }
