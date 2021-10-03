@@ -9,6 +9,11 @@ import Footer from "./component/Footer";
 
 function App() {
     const [array, setArray] = useState(111);
+    const [loginDetails, setLoginDetails] = useState({
+        email: "",
+        password: "",
+    });
+    const { email, password } = loginDetails;
     const newArr = ["hi", "hello", "goodbye"];
     const obj = {
         title: "1st card",
@@ -24,7 +29,14 @@ function App() {
             taskTime: "7 am - 8 am",
         },
     ];
-    console.log(array);
+
+    const handleChange = (e) => {
+        console.log(loginDetails);
+        setLoginDetails({
+            ...loginDetails,
+            [e.target.name]: e.target.value,
+        });
+    };
     return (
         <div className="App">
             <Header />
@@ -58,7 +70,37 @@ function App() {
             <Card2 object={obj} />
             <List2 tasks={arr} />
             <Footer />
-            <button onClick={() => setArray(array + 222)}>submit</button>
+            <div>
+                <button onClick={() => setArray(array + 222)}>submit</button>
+                <h3>{array}</h3>
+            </div>
+
+            <div>
+                <label for="exampleFormControlInput1" class="form-label">
+                    Email address
+                </label>
+                <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="name@example.com"
+                    name="email"
+                    onChange={handleChange}
+                    value={email}
+                />
+                <label for="exampleFormControlInput1" class="form-label">
+                    Password
+                </label>
+                <input
+                    type="password"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    name="password"
+                    onChange={handleChange}
+                    value={password}
+                />
+                <h2>{password}</h2>
+            </div>
         </div>
     );
 }
