@@ -3,6 +3,7 @@ import Button from "./component/Button";
 import Card from "./component/Card";
 import List from "./component/List";
 import Card2 from "./component/Card2";
+import List2 from "./component/List2";
 import Footer from "./component/Footer";
 
 function App() {
@@ -11,6 +12,16 @@ function App() {
         title: "1st card",
         text: "Card's content is accomplished",
     };
+    const arr = [
+        {
+            taskName: "meditate",
+            taskTime: "6 am - 7 am",
+        },
+        {
+            taskName: " exercise",
+            taskTime: " 7 am - 8 am",
+        },
+    ];
     return (
         <div className="App">
             <Header />
@@ -42,7 +53,7 @@ function App() {
             </div>
             <List array={newArr} />
             <Card2 object={obj} />
-
+            <List2 />
             <Footer />
         </div>
     );
